@@ -1,0 +1,18 @@
+package pe.edu.upeu.sysventas.service.impl;
+
+import pe.edu.upeu.sysventas.model.Marca;
+import pe.edu.upeu.sysventas.repository.IDCrudGenericoRepository;
+import pe.edu.upeu.sysventas.repository.MarcaRepository;
+import pe.edu.upeu.sysventas.service.IMarcaService;
+
+public class MarcaServiciosImp extends CrudGenericoServiceImp<Marca, Long> implements IMarcaService {
+    private final MarcaRepository marcaRepository;
+
+    public MarcaServiciosImp(MarcaRepository marcaRepository){
+        this.marcaRepository=marcaRepository;
+    }
+    @Override
+    protected IDCrudGenericoRepository<Marca, Long> getRepo() {
+        return null;
+    }
+}
