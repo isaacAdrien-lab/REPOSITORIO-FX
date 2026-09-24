@@ -5,10 +5,10 @@ import pe.edu.upeu.sysventas.repository.IDCrudGenericoRepository;
 import pe.edu.upeu.sysventas.repository.MarcaRepository;
 import pe.edu.upeu.sysventas.service.IMarcaService;
 
-public class MarcaServiciosImp extends CrudGenericoServiceImp<Marca, Long> implements IMarcaService {
+public class MarcaServiceImp extends CrudGenericoServiceImp<Marca, Long> implements IMarcaService {
     private final MarcaRepository marcaRepository;
 
-    public MarcaServiciosImp(MarcaRepository marcaRepository){
+    public MarcaServiceImp(MarcaRepository marcaRepository){
         this.marcaRepository=marcaRepository;
     }
     @Override

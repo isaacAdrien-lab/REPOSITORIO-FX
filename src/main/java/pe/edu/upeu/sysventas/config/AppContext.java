@@ -47,7 +47,7 @@ public class AppContext {
     private void registrarServicios() {
 
         registrar(ICategoriaService.class,    new CategoriaServiceImp(   getBean(CategoriaRepository.class)));
-        registrar(IMarcaService.class,        new MarcaServiciosImp(       getBean(MarcaRepository.class)));
+        registrar(IMarcaService.class,        new MarcaServiceImp(       getBean(MarcaRepository.class)));
         registrar(IProductoService.class,     new ProductoRepositoryImp(    getBean(ProductoRepository.class)));
         registrar(IUnidadMedidaService.class, new UnidadMedidaServiceImp(getBean(UnidadMedidaRepository.class)));
 

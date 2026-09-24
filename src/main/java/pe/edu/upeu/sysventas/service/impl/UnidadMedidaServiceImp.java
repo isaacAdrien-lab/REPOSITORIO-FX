@@ -15,7 +15,7 @@ public class UnidadMedidaServiceImp extends CrudGenericoServiceImp<UnidMedida, L
 
     @Override
     protected IDCrudGenericoRepository<UnidMedida, Long> getRepo() {
-        return null;
+        return unidadMedidaRepository;
     }
 }
 

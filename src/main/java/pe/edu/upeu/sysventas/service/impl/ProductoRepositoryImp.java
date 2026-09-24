@@ -1,14 +1,18 @@
 package pe.edu.upeu.sysventas.service.impl;
 
+import pe.edu.upeu.sysventas.dto.ComboBoxOption;
+import pe.edu.upeu.sysventas.enums.TipoProducto;
 import pe.edu.upeu.sysventas.model.Producto;
 import pe.edu.upeu.sysventas.repository.IDCrudGenericoRepository;
 import pe.edu.upeu.sysventas.repository.ProductoRepository;
 import pe.edu.upeu.sysventas.service.IProductoService;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ProductoRepositoryImp extends CrudGenericoServiceImp<Producto, Long> implements IProductoService {
 
     private final ProductoRepository productoRepository;
-
 
     public ProductoRepositoryImp(ProductoRepository productoRepository) {
         this.productoRepository = productoRepository;
@@ -17,6 +21,18 @@ public class ProductoRepositoryImp extends CrudGenericoServiceImp<Producto, Long
 
     @Override
     protected IDCrudGenericoRepository<Producto, Long> getRepo() {
-        return null;
+        return productoRepository;
+    }
+
+    @Override
+    public List<ComboBoxOption> listarTipoProducto() {
+        List<ComboBoxOption> listar = new ArrayList<>();
+        for (TipoProducto tp : TipoProducto.values()) {
+            ComboBoxOption cb = new ComboBoxOption();
+            cb.setKey(String.valueOf(tp.name()));
+
+            listar.add(cb);
+        }
+        return listar;
     }
 }
