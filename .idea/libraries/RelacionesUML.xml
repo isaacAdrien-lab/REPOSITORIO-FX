@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="RelacionesUML">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/RelacionesUML.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
