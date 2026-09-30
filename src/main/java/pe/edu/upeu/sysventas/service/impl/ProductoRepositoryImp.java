@@ -35,4 +35,12 @@ public class ProductoRepositoryImp extends CrudGenericoServiceImp<Producto, Long
         }
         return listar;
     }
+
+    @Override
+    public List<Producto> findAll() {
+        if (productoRepository.findAll().isEmpty()){
+            productoRepository.seedData();
+        }
+        return productoRepository.findAll();
+    }
 }

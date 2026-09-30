@@ -1,9 +1,9 @@
 package pe.edu.upeu.sysventas.repository;
-import pe.edu.upeu.sysventas.model.Marca;
+
+import pe.edu.upeu.sysventas.model.Categoria;
 import pe.edu.upeu.sysventas.model.UnidMedida;
 
-
-public class UnidadMedidaRepository extends AbstactJpaRepository<UnidMedida, Long> {
+public class UnidadMedidaRepository extends AbstactJpaRepository<UnidMedida, Long>{
     private long sequence=1;
     @Override
     protected Long getId(UnidMedida entity) {
@@ -13,11 +13,17 @@ public class UnidadMedidaRepository extends AbstactJpaRepository<UnidMedida, Lon
     @Override
     protected void setId(UnidMedida entity, Long id) {
         entity.setIdUnidad(id);
-
     }
 
     @Override
     protected Long generateId() {
-        return sequence;
+        return sequence++;
+    }
+
+    public void seedData() {
+        if (findAll().isEmpty()) {
+            save(new UnidMedida(generateId(), "Unidad"));
+            save(new UnidMedida(generateId(),"Litros"));
+        }
     }
 }

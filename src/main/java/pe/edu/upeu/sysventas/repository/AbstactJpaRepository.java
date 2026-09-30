@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public abstract class AbstactJpaRepository<T,ID> implements IDCrudGenericoRepository<T,ID> {
+public abstract class AbstactJpaRepository <T,ID> implements IDCrudGenericoRepository<T,ID>{
 
-    protected final List<T> data=new ArrayList<>();
-    protected abstract ID getId(T antity);
+    protected  final List<T> data=new ArrayList<>();
+    protected abstract ID getId(T entity);
     protected abstract void setId(T entity, ID id);
     protected abstract ID generateId();
 
@@ -17,16 +17,17 @@ public abstract class AbstactJpaRepository<T,ID> implements IDCrudGenericoReposi
             setId(entity, generateId());
         }
         data.add(entity);
-        return null;
+        return entity;
     }
 
     @Override
     public T update(T entity) {
         ID id=getId(entity);
-        for (int i=0; i<data.size(); i++){
+        for (int i = 0; i < data.size(); i++) {
             T registro=data.get(i);
-            if (getId(registro).equals(id)){
-                data.set(i,entity);
+            if(getId(registro).equals(id)){
+                data.set(i, entity);
+                return entity;
             }
         }
         throw new RuntimeException("No se encontro el registro con ID "+id);
@@ -47,7 +48,6 @@ public abstract class AbstactJpaRepository<T,ID> implements IDCrudGenericoReposi
     @Override
     public void deleteById(ID id) {
         data.removeIf(entity->getId(entity).equals(id));
-
     }
 
     @Override

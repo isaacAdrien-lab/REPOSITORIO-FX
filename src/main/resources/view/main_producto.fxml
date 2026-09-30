@@ -92,12 +92,7 @@
                                 </AnchorPane>
                                 <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
                                     <children>
-                                        <TableView fx:id="tableView" layoutX="14.0" layoutY="14.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
-                                            <columns>
-                                                <TableColumn prefWidth="75.0" text="C1" />
-                                                <TableColumn prefWidth="75.0" text="C2" />
-                                            </columns>
-                                        </TableView>
+                                        <TableView fx:id="tableView" layoutX="14.0" layoutY="14.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
                                     </children>
                                 </AnchorPane>
                             </children>
